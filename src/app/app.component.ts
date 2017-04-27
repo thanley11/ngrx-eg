@@ -10,23 +10,8 @@ import * as layout from './common/layout/store/layout.actions';
 @Component({
   selector: 'eg-app',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <bc-layout>
-      <bc-sidenav [open]="showSidenav$ | async">
-        <bc-nav-item (activate)="closeSidenav()" routerLink="/" icon="book" hint="View your book collection">
-          My Collection
-        </bc-nav-item>
-        <bc-nav-item (activate)="closeSidenav()" routerLink="/book/find" icon="search" hint="Find your next book!">
-          Browse Books
-        </bc-nav-item>
-      </bc-sidenav>
-      <bc-toolbar (openMenu)="openSidenav()">
-        Book Collection
-      </bc-toolbar>
+  templateUrl: './app.component.html',
 
-      <router-outlet></router-outlet>
-    </bc-layout>
-  `
 })
 export class AppComponent {
   showSidenav$: Observable<boolean>;

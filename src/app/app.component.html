@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<eg-layout>
+    <eg-sidebar [open]="showSidenav$ | async">
+    <!--    <eg-nav-item (activate)="closeSidenav()" routerLink="/" icon="book" hint="View your book collection">-->
+            <!--My Collection-->
+        <!--</eg-nav-item>-->
+        <!--<eg-nav-item (activate)="closeSidenav()" routerLink="/book/find" icon="search" hint="Find your next book!">-->
+            <!--Browse Books-->
+        <!--</eg-nav-item>-->
+    </eg-sidebar>
+    <!--<eg-toolbar (openMenu)="openSidenav()">-->
+        <!--Book Collection-->
+    <!--</eg-toolbar>-->
+
+    <!--<router-outlet></router-outlet>-->
+</eg-layout>

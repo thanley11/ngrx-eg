@@ -6,10 +6,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent implements OnInit {
-  constructor() { }
+export class SidebarComponent {
 
-  ngOnInit() {
-  }
+  @Input() open = true;
 
 }
+//<md-sidenav #start mode="side" opened="false">
+  //<md-nav-list>
+     //<ng-content></ng-content>
+  //</md-nav-list>
+//</md-sidenav>
+
+
