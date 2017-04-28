@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { type } from '../../utils/typeCheck';
+import { type } from '../../shared/utils/typeCheck';
 
 export const ActionTypes = {
   TOGGLE_SIDENAV:  type('[Layout] Toggle Sidenav')

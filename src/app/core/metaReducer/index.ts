@@ -8,10 +8,10 @@ import { storeFreeze } from 'ngrx-store-freeze';
 
 import { combineReducers } from '@ngrx/store';
 
-import * as fromLayout from '../layout/store/layout.reducer';
+import * as fromSidebar from '../../sidebar/store/sidebar.reducer';
 
 export interface AppState {
-  layout: fromLayout.State;
+  sidebar: fromSidebar.State;
 }
 
 
@@ -23,7 +23,7 @@ export interface AppState {
  * the result from right to left.
  */
 const reducers = {
-  layout: fromLayout.reducer
+  sidebar: fromSidebar.reducer
 };
 
 const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, combineReducers)(reducers);
@@ -57,7 +57,7 @@ export function metaReducer(state: any, action: any) {
 /**
  * Layout Reducers
  */
-export const getLayoutState = (state: AppState) => state.layout;
+export const getSidebarState = (state: AppState) => state.sidebar;
 
-export const getShowSidenav = createSelector(getLayoutState, fromLayout.getShowSidenav);
+export const getShowSidenav = createSelector(getSidebarState, fromSidebar.getShowSidenav);
 

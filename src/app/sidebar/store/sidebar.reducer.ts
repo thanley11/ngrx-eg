@@ -1,4 +1,4 @@
-import * as layout from './layout.actions';
+import * as sidebar from './sidebar.actions';
 
 
 export interface State {
@@ -9,9 +9,9 @@ const initialState: State = {
   showSidenav: false,
 };
 
-export function reducer(state = initialState, action: layout.Actions): State {
+export function reducer(state = initialState, action: sidebar.Actions): State {
   switch (action.type) {
-    case layout.ActionTypes.TOGGLE_SIDENAV:
+    case sidebar.ActionTypes.TOGGLE_SIDENAV:
       return {
         showSidenav: !state.showSidenav
       };

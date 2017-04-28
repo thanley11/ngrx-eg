@@ -8,26 +8,21 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { GridModule } from './grid/grid.module';
+import { CoreModule } from './core/core.module';
 import { SidebarModule } from './sidebar/sidebar.module';
-import { LayoutComponent } from './common/layout/component/layout.component';
-
-import { metaReducer } from './common/reducer/index';
+import { SharedModule } from  './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LayoutComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
-    NgbModule.forRoot(),
+    CoreModule,
+    SharedModule,
     GridModule,
     SidebarModule,
-    MaterialModule.forRoot(),
-    StoreModule.provideStore(metaReducer)
-    //LayoutModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
