@@ -8,8 +8,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class SidebarComponent {
 
-  @Input() open = true;
-
+  @Input() openStatus: boolean;
+  @Output() toggleSidenav = new EventEmitter<Object>();
 }
 //<md-sidenav #start mode="side" opened="false">
   //<md-nav-list>
