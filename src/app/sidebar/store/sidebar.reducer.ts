@@ -11,9 +11,13 @@ const initialState: State = {
 
 export function reducer(state = initialState, action: sidebar.Actions): State {
   switch (action.type) {
-    case sidebar.ActionTypes.TOGGLE_SIDENAV:
+    case sidebar.ActionTypes.OPEN_SIDENAV:
       return {
-        showSidenav: !state.showSidenav
+        showSidenav: true
+      };
+    case sidebar.ActionTypes.CLOSE_SIDENAV:
+      return {
+        showSidenav: false
       };
     default:
       return state;

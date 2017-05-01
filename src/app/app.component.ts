@@ -20,8 +20,13 @@ export class AppComponent {
     this.showSidenav$ = store.select(fromRoot.getShowSidenav);
   }
 
-  toggleSidenav() {
-    this.store.dispatch(new sidebarActions.ToggleSidenavAction());
+  openSidenav() {
+    this.store.dispatch(new sidebarActions.OpenSidenavAction());
+  }
+
+  closeSidenav() {
+    this.store.dispatch(new sidebarActions.CloseSidenavAction());
   }
 }
+
 

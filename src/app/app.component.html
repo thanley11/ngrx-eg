@@ -1,14 +1,4 @@
- <md-sidenav-container fullscreen>
-    <eg-sidebar [openStatus]="showSidenav$ | async"
-                (toggleSidenav)="toggleSidenav($event)">
-    <!--    <eg-nav-item (activate)="closeSidenav()" routerLink="/" icon="book" hint="View your book collection">-->
-            <!--My Collection-->
-        <!--</eg-nav-item>-->
-        <!--<eg-nav-item (activate)="closeSidenav()" routerLink="/book/find" icon="search" hint="Find your next book!">-->
-            <!--Browse Books-->
-        <!--</eg-nav-item>-->
-        Hello
-
-    </eg-sidebar>
-</md-sidenav-container>
-    <!--<router-outlet></router-outlet>-->
+<eg-sidebar [openStatus]="showSidenav$ | async">
+    <eg-toolbar (openSidenav)="openSidenav()"></eg-toolbar>
+    Hello
+</eg-sidebar>

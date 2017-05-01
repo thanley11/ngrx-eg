@@ -11,10 +11,13 @@ import { GridModule } from './grid/grid.module';
 import { CoreModule } from './core/core.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { SharedModule } from  './shared/shared.module';
+import { RoutingModule } from "./routing/routing.module";
+import { ToolbarComponent } from "./toolbar/toolbar.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +26,7 @@ import { SharedModule } from  './shared/shared.module';
     SharedModule,
     GridModule,
     SidebarModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]

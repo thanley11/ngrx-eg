@@ -1,4 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as fromRoot from '../../core/metaReducer/index';
+import * as sidebarActions from '../store/sidebar.actions';
 // import * as _ from 'lodash';
 
 @Component({
@@ -7,14 +10,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
-
   @Input() openStatus: boolean;
-  @Output() toggleSidenav = new EventEmitter<Object>();
-}
-//<md-sidenav #start mode="side" opened="false">
-  //<md-nav-list>
-     //<ng-content></ng-content>
-  //</md-nav-list>
-//</md-sidenav>
+  constructor(private store: Store<fromRoot.AppState>) {
+  }
+  openSidenav() {
+    this.store.dispatch(new sidebarActions.OpenSidenavAction());
+  }
 
+  closeSidenav() {
+    this.store.dispatch(new sidebarActions.CloseSidenavAction());
+  }
+
+}
 

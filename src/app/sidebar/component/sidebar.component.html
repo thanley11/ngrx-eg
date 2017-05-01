@@ -1,29 +1,10 @@
-<md-sidenav-container class="example-container">
-    <md-sidenav mode="side" [opened]="openStatus" class="example-sidenav">
-    <md-nav-list>
-        <a md-list-item href="page1.html">Page 1</a>
-        <a md-list-item href="page2.html">Page 2</a>
-        <a md-list-item href="page3.html">Page 3</a>
-    </md-nav-list>
-        </md-sidenav>
-        <md-toolbar color="primary">
-            <button md-icon-button (click)="toggleSidenav.emit()">
-                <md-icon class="md-24" >menu</md-icon>
-            </button>
-        </md-toolbar>
-    <div class="app-content">
-        Example Content area
-    </div>
+<md-sidenav-container class="example-container" fullscreen  (backdropClick)="closeSidenav()">
+    <md-sidenav mode="over" [opened]="openStatus" [disableClose]="true" class="example-sidenav">
+        <md-nav-list>
+            <a md-list-item href="page1.html">Page 1</a>
+            <a md-list-item href="page2.html">Page 2</a>
+            <a md-list-item href="page3.html">Page 3</a>
+        </md-nav-list>
+    </md-sidenav>
+    <ng-content></ng-content>
 </md-sidenav-container>
-<!--<md-sidenav-container class="example-container">
-  <md-sidenav #mySidenav class="example-sidenav ">
-    Jolly good!
-  </md-sidenav>
-
-  <div class="example-sidenav-content">
-    <button md-button (click)="mySidenav.open()">
-      Open sidenav
-    </button>
-  </div>
-  </md-sidenav-container>-->
-
