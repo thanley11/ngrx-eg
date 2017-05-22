@@ -3,8 +3,7 @@
         <md-nav-list>
             <a md-list-item  routerLinkActive="active" (click)="closeSidenav()" [routerLink]="['/']">Home</a>
             <a md-list-item (click)="closeSidenav()" [routerLink]="['grid']">Grid</a>
-            <a md-list-item href="page2.html">Page 2</a>
-            <a md-list-item href="page3.html">Page 3</a>
+            <a md-list-item (click)="closeSidenav()" [routerLink]="['admin']">Admin</a>
         </md-nav-list>
     </md-sidenav>
     <ng-content></ng-content>
