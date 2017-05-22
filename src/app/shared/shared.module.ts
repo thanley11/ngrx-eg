@@ -2,11 +2,11 @@ import { NgModule, } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
 
-//Add effects here 
+//Add effects here
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule.forRoot()
+    MaterialModule
   ],
   declarations: [
       ],
@@ -14,9 +14,9 @@ import { MaterialModule } from '@angular/material';
       ],
   bootstrap: [
   ],
-  exports:  [ 
-       CommonModule, 
-       MaterialModule 
+  exports:  [
+       CommonModule,
+       MaterialModule
   ]
 })
 export class SharedModule { }

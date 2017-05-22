@@ -6,14 +6,14 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { MaterialModule } from '@angular/material';
-import { SharedModule } from  '../shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 import { metaReducer } from './metaReducer/index';
 
-//Add effects here 
+//Add effects here
 @NgModule({
   imports: [
     StoreModule.provideStore(metaReducer),
-    MaterialModule.forRoot(),
+    MaterialModule,
     SharedModule
   ],
   declarations: [

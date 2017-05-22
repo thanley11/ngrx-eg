@@ -4,7 +4,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-grid',
   templateUrl: './grid.component.html',
-  styleUrls: ['./grid.component.css']
+  styles: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
   @Input() status:  Array<string>;
