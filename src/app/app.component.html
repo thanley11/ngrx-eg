@@ -1,4 +1,5 @@
 <eg-sidebar [openStatus]="showSidenav$ | async">
     <eg-toolbar (openSidenav)="openSidenav()"></eg-toolbar>
+    <router-outlet></router-outlet>
 </eg-sidebar>
-<router-outlet></router-outlet>
+
