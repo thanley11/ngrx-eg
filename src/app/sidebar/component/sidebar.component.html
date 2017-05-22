@@ -1,7 +1,8 @@
 <md-sidenav-container class="example-container" fullscreen  (backdropClick)="closeSidenav()">
     <md-sidenav mode="over" [opened]="openStatus" [disableClose]="true" class="example-sidenav">
         <md-nav-list>
-            <a md-list-item  routerLinkActive="active" [routerLink]="['grid']">Grid</a>
+            <a md-list-item  routerLinkActive="active" (click)="closeSidenav()" [routerLink]="['/']">Home</a>
+            <a md-list-item (click)="closeSidenav()" [routerLink]="['grid']">Grid</a>
             <a md-list-item href="page2.html">Page 2</a>
             <a md-list-item href="page3.html">Page 3</a>
         </md-nav-list>
