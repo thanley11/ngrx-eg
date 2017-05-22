@@ -15,10 +15,10 @@ export const routes: Routes = [
     // redirectTo: '/',
     component: GridComponent
   },
-//  {
-    //path: 'dashboard',
-    //component: DashboardComponent
-  //},
+ {
+    path: 'admin',
+    component: AdminComponent
+  },
   //{
     //path: 'my-questions',
     //loadChildren: 'app/myQuestions/my-questions.module#MyQuestionsModule',
