@@ -1,13 +1,20 @@
-import { Routes }  from '@angular/router';
-//import { DashboardComponent } from '../components/index';
+import { Routes } from '@angular/router';
+import { AppComponent } from '../app.component';
+import { GridComponent } from '../grid/component/grid.component';
+import { WelcomeComponent } from '../welcome/component/welcome.component';
 //import { AuthGuard } from '../core/services';
 
 export const routes: Routes = [
-  //{
-    //path: '',
-    //redirectTo: '/',
-    //pathMatch: 'full'
-  //},
+   {
+    path: '',
+    // redirectTo: '/',
+    component: WelcomeComponent
+  },
+  {
+    path: 'grid',
+    // redirectTo: '/',
+    component: GridComponent
+  },
 //  {
     //path: 'dashboard',
     //component: DashboardComponent

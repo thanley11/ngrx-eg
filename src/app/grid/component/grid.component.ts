@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 // import * as _ from 'lodash';
 
 @Component({
-  selector: 'app-grid',
+  selector: 'eg-grid',
   templateUrl: './grid.component.html',
   styles: ['./grid.component.css']
 })
@@ -13,11 +13,4 @@ export class GridComponent implements OnInit {
 
   ngOnInit() {
   }
-public isBasketType(type) {
-      return type === 'basket';
-    }
-
-    // public isEmptyOrders() {
-    //   return _.isEqual(this.status, {orders: {}});
-    // }
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
+import { RoutingModule } from '../routing/routing.module';
 //import { ModalModule, DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { SidebarComponent } from './component/sidebar.component';
@@ -13,7 +14,8 @@ import { SidebarService } from './services/sidebar.service';
         CommonModule,
         MaterialModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        RoutingModule
     ],
     providers: [
         SidebarService

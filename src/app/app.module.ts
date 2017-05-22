@@ -8,11 +8,12 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { GridModule } from './grid/grid.module';
+import { WelcomeModule } from './welcome/welcome.module';
 import { CoreModule } from './core/core.module';
 import { SidebarModule } from './sidebar/sidebar.module';
-import { SharedModule } from  './shared/shared.module';
-import { RoutingModule } from "./routing/routing.module";
-import { ToolbarComponent } from "./toolbar/toolbar.component";
+import { SharedModule } from './shared/shared.module';
+import { RoutingModule } from './routing/routing.module';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +26,9 @@ import { ToolbarComponent } from "./toolbar/toolbar.component";
     CoreModule,
     SharedModule,
     GridModule,
+    RoutingModule,
     SidebarModule,
-    RoutingModule
+    WelcomeModule
   ],
   providers: [],
   bootstrap: [ AppComponent ]
