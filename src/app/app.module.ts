@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, BaseRequestOptions } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
@@ -16,6 +16,8 @@ import { RoutingModule } from './routing/routing.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from "./core/guards/auth.guard";
+import { fakeBackendProvider } from "./core/helpers/fake-backend";
+import { MockBackend } from "@angular/http/testing";
 
 @NgModule({
   declarations: [
@@ -33,7 +35,12 @@ import { AuthGuard } from "./core/guards/auth.guard";
     WelcomeModule,
     AdminModule
   ],
-  providers: [ AuthGuard ],
+  providers: [ 
+      AuthGuard,
+      fakeBackendProvider,
+      MockBackend,
+      BaseRequestOptions
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
