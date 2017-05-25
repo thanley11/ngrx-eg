@@ -14,6 +14,8 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { SharedModule } from './shared/shared.module';
 import { RoutingModule } from './routing/routing.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { AdminModule } from './admin/admin.module';
+import { AuthGuard } from "./core/guards/auth.guard";
 
 @NgModule({
   declarations: [
@@ -28,9 +30,10 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     GridModule,
     RoutingModule,
     SidebarModule,
-    WelcomeModule
+    WelcomeModule,
+    AdminModule
   ],
-  providers: [],
+  providers: [ AuthGuard ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

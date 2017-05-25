@@ -2,7 +2,8 @@ import { Routes } from '@angular/router';
 import { AppComponent } from '../app.component';
 import { GridComponent } from '../grid/component/grid.component';
 import { WelcomeComponent } from '../welcome/component/welcome.component';
-//import { AuthGuard } from '../core/services';
+import { AdminComponent } from '../admin/component/admin.component';
+import { AuthGuard } from '../core/guards/auth.guard';
 
 export const routes: Routes = [
    {
@@ -15,9 +16,10 @@ export const routes: Routes = [
     // redirectTo: '/',
     component: GridComponent
   },
- {
+  { 
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    canActivate: [ AuthGuard ]
   },
   //{
     //path: 'my-questions',
