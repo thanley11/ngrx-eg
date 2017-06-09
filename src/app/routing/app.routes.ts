@@ -5,6 +5,7 @@ import { WelcomeComponent } from '../welcome/component/welcome.component';
 import { AdminComponent } from '../admin/component/admin.component';
 import { NotAuthorizedComponent } from '../not-authorized/not-authorized.component';
 import { AuthGuard } from '../core/guards/auth.guard';
+import { NotFoundPageComponent } from '../not-found/not-found.component';
 
 export const routes: Routes = [
    {
@@ -26,6 +27,10 @@ export const routes: Routes = [
     path: 'notauthorized',
     component: NotAuthorizedComponent
   },
+   {
+    path: '**',
+    component: NotFoundPageComponent
+  }
   //{
     //path: 'my-questions',
     //loadChildren: 'app/myQuestions/my-questions.module#MyQuestionsModule',

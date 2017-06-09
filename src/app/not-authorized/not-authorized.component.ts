@@ -7,10 +7,15 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'eg-unauth',
   template: `
-  <div class="container">
-    <h2>Not authorized</h2>
-    <div>You are not authorized to view this page</div>
-    </div>
+   <md-card>
+      <md-card-title>Not Authorized</md-card-title>
+      <md-card-content>
+        <p>You are not authorized to view this page</p>
+      </md-card-content>
+      <md-card-actions>
+        <button md-raised-button color="primary" routerLink="/">Take Me Home</button>
+      </md-card-actions>
+    </md-card>
 
   `
 })

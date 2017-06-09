@@ -15,6 +15,7 @@ import { SharedModule } from './shared/shared.module';
 import { RoutingModule } from './routing/routing.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
+import { NotFoundPageComponent} from './not-found/not-found.component';
 import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './core/guards/auth.guard';
 import { fakeBackendProvider } from './core/helpers/fake-backend';
@@ -24,7 +25,8 @@ import { MockBackend } from '@angular/http/testing';
   declarations: [
     AppComponent,
     ToolbarComponent,
-    NotAuthorizedComponent
+    NotAuthorizedComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
