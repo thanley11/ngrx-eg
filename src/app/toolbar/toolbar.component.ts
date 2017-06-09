@@ -2,7 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'eg-toolbar',
-  template: 
+  template:
   `<md-toolbar color="primary">
       <button md-icon-button (click)="openSidenav.emit()">
         <md-icon>menu</md-icon>

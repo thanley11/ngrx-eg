@@ -14,15 +14,17 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { SharedModule } from './shared/shared.module';
 import { RoutingModule } from './routing/routing.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 import { AdminModule } from './admin/admin.module';
-import { AuthGuard } from "./core/guards/auth.guard";
-import { fakeBackendProvider } from "./core/helpers/fake-backend";
-import { MockBackend } from "@angular/http/testing";
+import { AuthGuard } from './core/guards/auth.guard';
+import { fakeBackendProvider } from './core/helpers/fake-backend';
+import { MockBackend } from '@angular/http/testing';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    NotAuthorizedComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,7 @@ import { MockBackend } from "@angular/http/testing";
     WelcomeModule,
     AdminModule
   ],
-  providers: [ 
+  providers: [
       AuthGuard,
       fakeBackendProvider,
       MockBackend,

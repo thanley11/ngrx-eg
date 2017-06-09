@@ -3,6 +3,7 @@ import { AppComponent } from '../app.component';
 import { GridComponent } from '../grid/component/grid.component';
 import { WelcomeComponent } from '../welcome/component/welcome.component';
 import { AdminComponent } from '../admin/component/admin.component';
+import { NotAuthorizedComponent } from '../not-authorized/not-authorized.component';
 import { AuthGuard } from '../core/guards/auth.guard';
 
 export const routes: Routes = [
@@ -16,10 +17,14 @@ export const routes: Routes = [
     // redirectTo: '/',
     component: GridComponent
   },
-  { 
+  {
     path: 'admin',
     component: AdminComponent,
     canActivate: [ AuthGuard ]
+  },
+  {
+    path: 'notauthorized',
+    component: NotAuthorizedComponent
   },
   //{
     //path: 'my-questions',
