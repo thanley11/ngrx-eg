@@ -1,0 +1,23 @@
+<md-toolbar color="primary">
+      <button md-icon-button (click)="openSidenav.emit()">
+        <md-icon>menu</md-icon>
+      </button>
+      <span class="toolbar-spacer"></span>
+     <button md-icon-button [mdMenuTriggerFor]="myMenu">
+       <md-icon>more_vert</md-icon>
+     </button>
+    <md-menu #myMenu="mdMenu">
+      <button md-menu-item>
+        <md-icon>person</md-icon>
+        <span>Profile</span>
+      </button>
+      <button md-menu-item>
+        <md-icon>settings</md-icon>
+        <span>Settings</span>
+      </button>
+       <button md-menu-item>
+        <md-icon>power_settings_new</md-icon>
+        <span>Sign Out</span>
+      </button>
+    </md-menu>
+ </md-toolbar>
