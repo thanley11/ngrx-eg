@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 import { ActionReducer } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 
-import { compose } from '@ngrx/core/compose';
+import { compose } from '@ngrx/store';
 
 import { storeFreeze } from 'ngrx-store-freeze';
 
@@ -22,7 +22,7 @@ export interface AppState {
  * wrapping that in storeLogger. Remember that compose applies
  * the result from right to left.
  */
-const reducers = {
+export const reducers = {
   sidebar: fromSidebar.reducer
 };
 
@@ -47,9 +47,9 @@ export function metaReducer(state: any, action: any) {
  *
  * ```ts
  * class MyComponent {
- * 	constructor(state$: Observable<State>) {
- * 	  this.booksState$ = state$.select(getBooksState);
- * 	}
+ *     constructor(state$: Observable<State>) {
+ *       this.booksState$ = state$.select(getBooksState);
+ *     }
  * }
  * ```
  */
