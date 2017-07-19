@@ -1,8 +1,7 @@
-import { createSelector } from 'reselect';
 import { ActionReducer } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 
-import { compose } from '@ngrx/store';
+import { compose, createSelector } from '@ngrx/store';
 
 import { storeFreeze } from 'ngrx-store-freeze';
 
