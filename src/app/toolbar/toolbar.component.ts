@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { AuthenticationService } from '../core/auth/auth.service';
 
 @Component({
   selector: 'eg-toolbar',
@@ -7,5 +8,12 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 })
 export class ToolbarComponent {
-     @Output() openSidenav = new EventEmitter();
+  @Output() openSidenav = new EventEmitter();
+  constructor(
+    private authenticationService: AuthenticationService) {
+  }
+
+  logout() {
+    this.authenticationService.logout();
+  }
 }

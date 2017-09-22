@@ -6,6 +6,7 @@ import { AdminComponent } from '../admin/component/admin.component';
 import { NotAuthorizedComponent } from '../not-authorized/not-authorized.component';
 import { AuthGuard } from '../core/guards/auth.guard';
 import { NotFoundPageComponent } from '../not-found/not-found.component';
+import { ProfileComponent } from '../profile/profile.component';
 
 export const routes: Routes = [
    {
@@ -27,7 +28,11 @@ export const routes: Routes = [
     path: 'notauthorized',
     component: NotAuthorizedComponent
   },
-   {
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
     path: '**',
     component: NotFoundPageComponent
   }

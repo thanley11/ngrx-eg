@@ -15,6 +15,7 @@ import { RoutingModule } from './routing/routing.module';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 import { NotFoundPageComponent} from './not-found/not-found.component';
+import { ProfileComponent } from './profile/profile.component';
 import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './core/guards/auth.guard';
 import { fakeBackendProvider } from './core/helpers/fake-backend';
@@ -25,7 +26,8 @@ import { MockBackend } from '@angular/http/testing';
     AppComponent,
     ToolbarComponent,
     NotAuthorizedComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
