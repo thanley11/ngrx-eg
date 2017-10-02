@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, BaseRequestOptions } from '@angular/http';
-import { MaterialModule } from '@angular/material';
 import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
@@ -20,6 +19,7 @@ import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './core/guards/auth.guard';
 import { fakeBackendProvider } from './core/helpers/fake-backend';
 import { MockBackend } from '@angular/http/testing';
+import { AppMaterialModule } from './core/material/material.module';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,8 @@ import { MockBackend } from '@angular/http/testing';
     RoutingModule,
     SidebarModule,
     WelcomeModule,
-    AdminModule
+    AdminModule,
+    AppMaterialModule
   ],
   providers: [
       AuthGuard,

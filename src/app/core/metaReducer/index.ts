@@ -1,4 +1,4 @@
-import { ActionReducer } from '@ngrx/store';
+import { ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 
 import { compose, createSelector } from '@ngrx/store';
@@ -21,20 +21,24 @@ export interface AppState {
  * wrapping that in storeLogger. Remember that compose applies
  * the result from right to left.
  */
-export const reducers = {
+export const reducers: ActionReducerMap<AppState> = {
   sidebar: fromSidebar.reducer
 };
 
-const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, combineReducers)(reducers);
-const productionReducer: ActionReducer<AppState> = combineReducers(reducers);
+// const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, combineReducers)(reducers);
+// const productionReducer: ActionReducer<AppState> = combineReducers(reducers);
 
-export function metaReducer(state: any, action: any) {
-  if (environment.production) {
-    return productionReducer(state, action);
-  } else {
-    return developmentReducer(state, action);
-  }
-}
+export const metaReducer: MetaReducer<AppState>[] = !environment.production
+? [storeFreeze]
+: [];
+
+// export function metaReducer(state: any, action: any) {
+//   if (environment.production) {
+//     return productionReducer(state, action);
+//   } else {
+//     return developmentReducer(state, action);
+//   }
+// }
 
 
 /**

@@ -6,10 +6,11 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { MaterialModule } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
 import { reducers } from './metaReducer/index';
 import { initialState } from '../sidebar/store/sidebar.reducer';
+import { AppMaterialModule } from '../core/material/material.module';
+
 
 @NgModule({
   imports: [
@@ -20,9 +21,9 @@ import { initialState } from '../sidebar/store/sidebar.reducer';
         }
       }
     }),
-    MaterialModule,
     SharedModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    AppMaterialModule
   ],
   declarations: [
       ],

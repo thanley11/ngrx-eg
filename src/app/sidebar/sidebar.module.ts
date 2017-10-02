@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
 import { RoutingModule } from '../routing/routing.module';
 
 import { SidebarComponent } from './component/sidebar.component';
 import { SidebarService } from './services/sidebar.service';
+import { AppMaterialModule } from '../core/material/material.module';
 
 @NgModule({
     imports: [
         CommonModule,
-        MaterialModule,
+        AppMaterialModule,
         FormsModule,
         HttpModule,
         RoutingModule

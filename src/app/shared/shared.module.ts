@@ -1,12 +1,13 @@
 import { NgModule, } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '@angular/material';
+import { AppMaterialModule } from '../core/material/material.module';
+
 
 //Add effects here
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule
+    AppMaterialModule
   ],
   declarations: [
       ],
@@ -15,8 +16,7 @@ import { MaterialModule } from '@angular/material';
   bootstrap: [
   ],
   exports:  [
-       CommonModule,
-       MaterialModule
+       CommonModule
   ]
 })
 export class SharedModule { }
