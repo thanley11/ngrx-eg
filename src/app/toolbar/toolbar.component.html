@@ -1,23 +1,23 @@
-<md-toolbar color="primary">
-      <button md-icon-button (click)="openSidenav.emit()">
-        <md-icon>menu</md-icon>
+<mat-toolbar color="primary">
+      <button mat-icon-button (click)="openSidenav.emit()">
+        <mat-icon>menu</mat-icon>
       </button>
       <span class="toolbar-spacer"></span>
-     <button md-icon-button [mdMenuTriggerFor]="myMenu">
-       <md-icon>more_vert</md-icon>
+     <button mat-icon-button [mdMenuTriggerFor]="myMenu">
+       <mat-icon>more_vert</mat-icon>
      </button>
-    <md-menu #myMenu="mdMenu">
-      <button md-menu-item [routerLink]="['profile']">
-        <md-icon>person</md-icon>
+    <mat-menu #myMenu="mdMenu">
+      <button mat-menu-item [routerLink]="['profile']">
+        <mat-icon>person</mat-icon>
         <span>Profile</span>
       </button>
-      <button md-menu-item>
-        <md-icon>settings</md-icon>
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
         <span>Settings</span>
       </button>
-       <button md-menu-item [routerLink]="['/']" (click)="logout()">
-        <md-icon>power_settings_new</md-icon>
+       <button mat-menu-item [routerLink]="['/']" (click)="logout()">
+        <mat-icon>power_settings_new</mat-icon>
         <span>Sign Out</span>
       </button>
-    </md-menu>
- </md-toolbar>
+    </mat-menu>
+ </mat-toolbar>

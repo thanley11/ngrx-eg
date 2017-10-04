@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, BaseRequestOptions } from '@angular/http';
 import { StoreModule } from '@ngrx/store';
+import { NoConflictStyleCompatibilityMode  } from '@angular/material/core';
+import { MockBackend } from '@angular/http/testing';
 
 import { AppComponent } from './app.component';
 import { GridModule } from './grid/grid.module';
@@ -18,7 +20,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './core/guards/auth.guard';
 import { fakeBackendProvider } from './core/helpers/fake-backend';
-import { MockBackend } from '@angular/http/testing';
 import { AppMaterialModule } from './core/material/material.module';
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AppMaterialModule } from './core/material/material.module';
     SidebarModule,
     WelcomeModule,
     AdminModule,
-    AppMaterialModule
+    AppMaterialModule,
+    NoConflictStyleCompatibilityMode
   ],
   providers: [
       AuthGuard,
