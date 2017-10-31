@@ -5,15 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { GridComponent } from './component/grid.component';
 import { GridService } from './services/grid.service';
-//import { ModalModule, DropdownModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AppMaterialModule } from '../core/material/material.module';
 
 
 @NgModule({
     imports: [
         CommonModule,
-        //ModalModule,
         FormsModule,
-        HttpModule
+        HttpModule,
+        AppMaterialModule
     ],
     providers: [
         GridService

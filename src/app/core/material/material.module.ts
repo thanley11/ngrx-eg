@@ -8,7 +8,8 @@ import {
   MdMenuModule,
   MdSidenavModule,
   MdSlideToggleModule,
-  MdToolbarModule
+  MdToolbarModule,
+  MatCardModule
 } from '@angular/material';
 
 @NgModule({
@@ -21,7 +22,8 @@ import {
     MdMenuModule,
     MdSidenavModule,
     MdSlideToggleModule,
-    MdToolbarModule
+    MdToolbarModule,
+    MatCardModule
   ]
 })
 

@@ -43,7 +43,7 @@ export class WelcomeComponent implements OnInit {
             });
     }
 
-    loggedIn(){
-        localStorage.getItem('currentUser')
+    loggedIn() {
+        localStorage.getItem('currentUser');
     }
 }
