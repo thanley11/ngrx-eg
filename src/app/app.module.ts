@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, BaseRequestOptions } from '@angular/http';
 import { StoreModule } from '@ngrx/store';
-import { NoConflictStyleCompatibilityMode  } from '@angular/material/core';
 import { MockBackend } from '@angular/http/testing';
 
 import { AppComponent } from './app.component';
@@ -40,8 +39,7 @@ import { AppMaterialModule } from './core/material/material.module';
     SidebarModule,
     WelcomeModule,
     AdminModule,
-    AppMaterialModule,
-    NoConflictStyleCompatibilityMode
+    AppMaterialModule
   ],
   providers: [
       AuthGuard,
