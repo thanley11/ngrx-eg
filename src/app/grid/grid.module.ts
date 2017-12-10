@@ -4,19 +4,23 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { GridComponent } from './component/grid.component';
-import { GridService } from './services/grid.service';
+import { SettingsService } from './services/grid.service';
 import { AppMaterialModule } from '../core/material/material.module';
 
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { SettingsEffects } from './store/grid.effects';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         HttpModule,
-        AppMaterialModule
+        AppMaterialModule,
+        EffectsModule.forFeature([SettingsEffects]),
     ],
     providers: [
-        GridService
+        SettingsService 
     ],
     declarations: [
         GridComponent
@@ -29,12 +33,12 @@ export class GridModule {
         return {
             ngModule: GridModule,
             providers: [
-                GridService
+                SettingsService
             ]
         };
     }
 }
 
 export {
-    GridService
+    SettingsService
 }

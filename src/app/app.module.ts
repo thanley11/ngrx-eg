@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, BaseRequestOptions } from '@angular/http';
 import { StoreModule } from '@ngrx/store';
 import { MockBackend } from '@angular/http/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { GridModule } from './grid/grid.module';
@@ -20,6 +21,7 @@ import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './core/guards/auth.guard';
 import { fakeBackendProvider } from './core/helpers/fake-backend';
 import { AppMaterialModule } from './core/material/material.module';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { AppMaterialModule } from './core/material/material.module';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     CoreModule,
     SharedModule,
     GridModule,
@@ -39,7 +41,8 @@ import { AppMaterialModule } from './core/material/material.module';
     SidebarModule,
     WelcomeModule,
     AdminModule,
-    AppMaterialModule
+    AppMaterialModule,
+    EffectsModule.forRoot([]),
   ],
   providers: [
       AuthGuard,

@@ -1,4 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as gridActions from '../store/grid.actions';
+import * as fromRoot from '../../core/metaReducer/index';
 // import * as _ from 'lodash';
 
 @Component({
@@ -7,10 +10,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styles: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-  status:  Array<string> = ['1', '2', '3', '4', '5', '6']
   @Output() closeDownload= new EventEmitter<Array<string>>();
-  constructor() { }
+  constructor(private store: Store<fromRoot.AppState>) { }
 
   ngOnInit() {
+    this.store.dispatch(new gridActions.GetSettings());
   }
 }

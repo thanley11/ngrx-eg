@@ -8,9 +8,11 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 
 import * as fromSidebar from '../../sidebar/store/sidebar.reducer';
+import * as fromSettings from '../../grid/store/grid.reducer';
 
 export interface AppState {
   sidebar: fromSidebar.State;
+  settings: fromSettings.State;
 }
 
 
@@ -22,7 +24,8 @@ export interface AppState {
  * the result from right to left.
  */
 export const reducers: ActionReducerMap<AppState> = {
-  sidebar: fromSidebar.reducer
+  sidebar: fromSidebar.reducer,
+  settings: fromSettings.reducer
 };
 
 // const developmentReducer: ActionReducer<AppState> = compose(storeFreeze, combineReducers)(reducers);
