@@ -1,8 +1,9 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/takeUntil';
+import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 import { Injectable, InjectionToken, Optional, Inject } from '@angular/core';
 import { Effect, Actions } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
@@ -19,7 +20,7 @@ export class SettingsEffects {
   loadSettings$: Observable<Action> = this.actions$
     .ofType(grid.ActionTypes.GET_SETTINGS)
     .switchMap(() => {
-        return this.settingsService.getSettings
+        return this.settingsService.getSettings()
         .map((settings: Settings[]) => new grid.LoadSettings(settings))
         .catch(error => of(new grid.LoadFail(error)))
     }
