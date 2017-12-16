@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { GridComponent } from './component/grid.component';
 import { SettingsService } from './services/grid.service';
+import { SettingsListComponent } from './component/settings-list.component';
 import { AppMaterialModule } from '../core/material/material.module';
 
 import { StoreModule } from '@ngrx/store';
@@ -23,7 +24,8 @@ import { SettingsEffects } from './store/grid.effects';
         SettingsService 
     ],
     declarations: [
-        GridComponent
+        GridComponent,
+        SettingsListComponent
     ],
     exports: [
     ]
