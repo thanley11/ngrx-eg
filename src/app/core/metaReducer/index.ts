@@ -64,6 +64,8 @@ export const metaReducer: MetaReducer<AppState>[] = !environment.production
  * Layout Reducers
  */
 export const getSidebarState = (state: AppState) => state.sidebar;
+export const getSettingsState = (state: AppState) => state.settings;
 
 export const getShowSidenav = createSelector(getSidebarState, fromSidebar.getShowSidenav);
 
+export const getSettings = createSelector(getSettingsState, fromSettings.getSettings);

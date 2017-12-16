@@ -21,7 +21,7 @@ export class SettingsEffects {
     .ofType(grid.ActionTypes.GET_SETTINGS)
     .switchMap(() => {
         return this.settingsService.getSettings()
-        .map((settings: Settings[]) => new grid.LoadSettings(settings))
+        .map((settings: Settings) => new grid.LoadSettings(settings))
         .catch(error => of(new grid.LoadFail(error)))
     }
 );

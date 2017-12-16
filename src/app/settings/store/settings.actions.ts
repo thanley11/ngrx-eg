@@ -15,7 +15,7 @@ export class GetSettings implements Action {
 
 export class LoadSettings implements Action {
   type = ActionTypes.LOAD_SUCCESS;
-  constructor(public payload: Settings[]) {}
+  constructor(public payload: Settings) {}
 }
 export class LoadFail implements Action {
   type = ActionTypes.LOAD_FAIL;

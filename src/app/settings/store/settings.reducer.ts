@@ -2,11 +2,11 @@ import * as grid from './settings.actions';
 import { Settings } from '../settings.model';
 
 export interface State {
-  settings: Settings[];
+  settings: Settings;
 }
 
 export const initialState: State = {
-  settings: [],
+  settings: <Settings>{ title: 'Test'},
 };
 
 export function reducer(state = initialState, action: grid.Actions): State {
@@ -22,3 +22,4 @@ export function reducer(state = initialState, action: grid.Actions): State {
 
 //export const getShowSidenav = (state: State) => state.showSidenav;
 
+export const getSettings = (state: State) => state.settings;

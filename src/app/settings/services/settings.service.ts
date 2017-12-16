@@ -13,14 +13,14 @@ import { Settings } from '../settings.model'
 @Injectable()
 export class SettingsService {
 
-    private _url: string = `${environment.apiUrl}/settings`
+    private _url: string = `${environment.apiUrl}/settings/`
 
     constructor(private _http: HttpClient) { }
 
-    public getSettings(): Observable<Settings[]> {
+    public getSettings(): Observable<Settings> {
         let url: string = `${this._url}`;
 
-        return this._http.get<Settings[]>(url);
+        return this._http.get<Settings>(url);
     }
 
    /* public retrieveBook(volumeId: string): Observable<Book> {*/

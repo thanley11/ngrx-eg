@@ -12,5 +12,4 @@ import { Settings } from '../settings.model';
 
 export class SettingsListComponent {
  @Input() settings: Settings;
- constructor(){}
 }
