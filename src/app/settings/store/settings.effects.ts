@@ -9,8 +9,8 @@ import { Effect, Actions } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { empty } from 'rxjs/observable/empty';
 import { of } from 'rxjs/observable/of';
-import * as grid from './grid.actions';
-import { SettingsService } from '../services/grid.service';
+import * as grid from './settings.actions';
+import { SettingsService } from '../services/settings.service';
 import { Settings } from '../settings.model';
 
 

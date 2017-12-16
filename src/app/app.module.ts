@@ -7,7 +7,7 @@ import { MockBackend } from '@angular/http/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { GridModule } from './grid/grid.module';
+import { SettingsModule } from './settings/settings.module';
 import { WelcomeModule } from './welcome/welcome.module';
 import { CoreModule } from './core/core.module';
 import { SidebarModule } from './sidebar/sidebar.module';
@@ -36,7 +36,7 @@ import { EffectsModule } from '@ngrx/effects';
     HttpClientModule,
     CoreModule,
     SharedModule,
-    GridModule,
+    SettingsModule,
     RoutingModule,
     SidebarModule,
     WelcomeModule,

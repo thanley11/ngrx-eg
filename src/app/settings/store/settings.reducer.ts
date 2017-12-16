@@ -1,4 +1,4 @@
-import * as grid from './grid.actions';
+import * as grid from './settings.actions';
 import { Settings } from '../settings.model';
 
 export interface State {

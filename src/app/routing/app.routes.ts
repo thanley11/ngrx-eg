@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { AppComponent } from '../app.component';
-import { GridComponent } from '../grid/component/grid.component';
+import { SettingsComponent } from '../settings/component/settings.component';
 import { WelcomeComponent } from '../welcome/component/welcome.component';
 import { AdminComponent } from '../admin/component/admin.component';
 import { NotAuthorizedComponent } from '../not-authorized/not-authorized.component';
@@ -14,10 +14,15 @@ export const routes: Routes = [
     // redirectTo: '/',
     component: WelcomeComponent
   },
+  // {
+  //   path: 'grid',
+  //   // redirectTo: '/',
+  //   component: GridComponent
+  // },
   {
-    path: 'grid',
+    path: 'settings',
     // redirectTo: '/',
-    component: GridComponent
+    component: SettingsComponent
   },
   {
     path: 'admin',

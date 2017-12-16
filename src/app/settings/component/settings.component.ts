@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
-import * as gridActions from '../store/grid.actions';
+import * as gridActions from '../store/settings.actions';
 import * as fromRoot from '../../core/metaReducer/index';
 // import * as _ from 'lodash';
 
@@ -13,7 +13,7 @@ import * as fromRoot from '../../core/metaReducer/index';
  `,
   styles: ['./grid.component.css']
 })
-export class GridComponent implements OnInit {
+export class SettingsComponent implements OnInit {
   public settings;
   constructor(private store: Store<fromRoot.AppState>) { 
     this.settings = store.select('settings'); 

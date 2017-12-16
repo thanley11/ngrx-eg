@@ -8,7 +8,7 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 
 import * as fromSidebar from '../../sidebar/store/sidebar.reducer';
-import * as fromSettings from '../../grid/store/grid.reducer';
+import * as fromSettings from '../../settings/store/settings.reducer';
 
 export interface AppState {
   sidebar: fromSidebar.State;
