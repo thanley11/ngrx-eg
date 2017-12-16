@@ -10,11 +10,11 @@ export const ActionTypes = {
 
 export class GetSettings implements Action {
   type = ActionTypes.GET_SETTINGS;
+  constructor(public payload: any = null) { }
 }
 
 export class LoadSettings implements Action {
   type = ActionTypes.LOAD_SUCCESS;
-
   constructor(public payload: Settings[]) {}
 }
 export class LoadFail implements Action {

@@ -6,12 +6,18 @@ import * as fromRoot from '../../core/metaReducer/index';
 
 @Component({
   selector: 'eg-grid',
-  templateUrl: './grid.component.html',
+  template:`
+  <eg-settings-list
+    [settings]="settings">
+  </eg-settings-list>
+ `,
   styles: ['./grid.component.css']
 })
 export class GridComponent implements OnInit {
-  @Output() closeDownload= new EventEmitter<Array<string>>();
-  constructor(private store: Store<fromRoot.AppState>) { }
+  public settings;
+  constructor(private store: Store<fromRoot.AppState>) { 
+    this.settings = store.select('settings'); 
+  }
 
   ngOnInit() {
     this.store.dispatch(new gridActions.GetSettings());

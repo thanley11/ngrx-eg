@@ -1,8 +1,8 @@
 import * as grid from './grid.actions';
-
+import { Settings } from '../settings.model';
 
 export interface State {
-  settings: Object[];
+  settings: Settings[];
 }
 
 export const initialState: State = {
@@ -11,8 +11,10 @@ export const initialState: State = {
 
 export function reducer(state = initialState, action: grid.Actions): State {
   switch (action.type) {
-    case grid.ActionTypes.GET_SETTINGS :
-      return state; 
+    case grid.ActionTypes.LOAD_SUCCESS :
+      return {
+        settings : action.payload
+      }
     default:
       return state;
   }
