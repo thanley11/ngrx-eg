@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { WelcomeComponent } from './component/welcome.component';
 import { AuthenticationService } from '../core/auth/auth.service';
 
-
 @NgModule({
   imports: [
         CommonModule,

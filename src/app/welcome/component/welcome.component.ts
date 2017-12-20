@@ -42,6 +42,20 @@ export class WelcomeComponent implements OnInit {
                 }
             });
     }
+    
+    // login() {
+    //     this.loading = true;
+    //     const result = this.authenticationService.login(this.model.username, this.model.password)
+    //        if(result){
+    //             // if (result ===true) {
+    //                 this.router.navigate(['/admin']);
+    //             } else {
+    //                 this.error = 'Username or password is incorrect';
+    //                 this.loading = false;
+    //             }
+            
+    //         };
+    
 
     loggedIn() {
         localStorage.getItem('currentUser');

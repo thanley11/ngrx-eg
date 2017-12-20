@@ -7,6 +7,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { SharedModule } from '../shared/shared.module';
+import { AuthModule } from './auth/auth.module'
 import { reducers } from './metaReducer/index';
 import { initialState } from '../sidebar/store/sidebar.reducer';
 import { AppMaterialModule } from '../core/material/material.module';
@@ -22,6 +23,7 @@ import { AppMaterialModule } from '../core/material/material.module';
       }
     }),
     SharedModule,
+    AuthModule,
     NoopAnimationsModule,
     AppMaterialModule
   ],

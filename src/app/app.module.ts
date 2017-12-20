@@ -5,6 +5,7 @@ import { HttpModule, BaseRequestOptions } from '@angular/http';
 import { StoreModule } from '@ngrx/store';
 import { MockBackend } from '@angular/http/testing';
 import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
 import { SettingsModule } from './settings/settings.module';
@@ -43,6 +44,15 @@ import { EffectsModule } from '@ngrx/effects';
     AdminModule,
     AppMaterialModule,
     EffectsModule.forRoot([]),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('access_token');
+        },
+        whitelistedDomains: ['localhost:80']
+      }
+    })
+
   ],
   providers: [
       AuthGuard,
