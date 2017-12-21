@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, BaseRequestOptions } from '@angular/http';
 import { StoreModule } from '@ngrx/store';
 import { MockBackend } from '@angular/http/testing';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
 import { SettingsModule } from './settings/settings.module';
@@ -22,7 +23,7 @@ import { AdminModule } from './admin/admin.module';
 import { AuthGuard } from './core/guards/auth.guard';
 import { fakeBackendProvider } from './core/helpers/fake-backend';
 import { AppMaterialModule } from './core/material/material.module';
-import { EffectsModule } from '@ngrx/effects';
+import { ErrorInterceptor } from './core/errorhandler/error-interceptor';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,12 @@ import { EffectsModule } from '@ngrx/effects';
       AuthGuard,
       fakeBackendProvider,
       MockBackend,
-      BaseRequestOptions
+      BaseRequestOptions,
+      {
+        provide: HTTP_INTERCEPTORS,
+        useClass: ErrorInterceptor,
+        multi: true,
+      }
   ],
   bootstrap: [ AppComponent ]
 })
