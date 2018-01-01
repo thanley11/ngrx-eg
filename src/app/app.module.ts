@@ -48,7 +48,7 @@ import { ErrorInterceptor } from './core/errorhandler/error-interceptor';
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
-          return localStorage.getItem('access_token');
+          return localStorage.getItem('accessToken');
         },
         whitelistedDomains: ['localhost:80']
       }

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { environment } from '../../../environments/environment';
 import { Token } from './token.model';
+import { tokenNotExpired } from 'angular2-jwt';
 
 @Injectable()
 export class AuthenticationService {
@@ -11,8 +12,8 @@ export class AuthenticationService {
     private _url: string = `${environment.apiUrl}/api-token-auth/`
 
     constructor(private _http: HttpClient) {
-        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        this.token = currentUser && currentUser.token;
+        // const currentUser = JSON.parse(localStorage.getItem('accessToken'));
+        // this.token = currentUser && currentUser.token;
     }
     
     login(username: string, password: string): Observable<boolean> {
@@ -22,17 +23,24 @@ export class AuthenticationService {
             .map((token: Token) => {
                 if (token) {
                     this.token = token.token;
-                    localStorage.setItem('currentUser', JSON.stringify({ username: username, token: this.token }));
+                    localStorage.setItem('accessToken', this.token );
                     return true;
                 } else {
                     return false;
                 }
+            })
+            .catch(() => {
+                return Observable.of(false);
             });
     }
 
     logout(): void {
-        // clear token remove user from local storage to log user out
         this.token = null;
-        localStorage.removeItem('currentUser');
+        localStorage.removeItem('accessToken');
+    }
+
+    
+    loggedIn() {
+      return tokenNotExpired('accessToken');
     }
 }
