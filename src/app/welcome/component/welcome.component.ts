@@ -9,30 +9,18 @@ import { NgForm } from '@angular/forms';
   selector: 'eg-welcome',
   templateUrl: 'welcome.html'
 })
-export class WelcomeComponent implements OnInit {
+export class WelcomeComponent {
     model: any = {};
     loading = false;
     error = '';
 
     constructor(
         private router: Router,
-        private authenticationService: AuthenticationService) { }
-
-    ngOnInit() {
-        // reset login status
-        // this.authenticationService.logout();
-    }
-
-    // onSubmit(f: NgForm) {
-    //   // (ngSubmit)="f.form.valid && login()"
-    //   // (ngSubmit)="onSubmit(f)"
-    //   console.log(f.form.valid);  // { first: '', last: '' }
-    //   console.log(f.valid);  // false
-    // }
+        private auth: AuthenticationService) { }
 
     login() {
         this.loading = true;
-        this.authenticationService.login(this.model.username, this.model.password)
+        this.auth.login(this.model.username, this.model.password)
             .subscribe(result => {
                 if (result === true) {
                     this.router.navigate(['/admin']);
@@ -44,6 +32,6 @@ export class WelcomeComponent implements OnInit {
     }
     
     loggedIn() {
-        localStorage.getItem('currentUser');
+        return this.auth.loggedIn();
     }
 }
