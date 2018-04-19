@@ -15,15 +15,14 @@ export class AuthenticationService {
         // const currentUser = JSON.parse(localStorage.getItem('accessToken'));
         // this.token = currentUser && currentUser.token;
     }
-    
+
     login(username: string, password: string): Observable<boolean> {
         let url: string = `${this._url}`;
         const body = { username: username, password: password };
-        return this._http.post<Token>(url,body)
+        return this._http.post<Token>(url, body)
             .map((token: Token) => {
                 if (token) {
-                    this.token = token.token;
-                    localStorage.setItem('accessToken', this.token );
+                    localStorage.setItem('accessToken', token.access_token );
                     return true;
                 } else {
                     return false;
@@ -39,7 +38,7 @@ export class AuthenticationService {
         localStorage.removeItem('accessToken');
     }
 
-    
+
     loggedIn() {
       return tokenNotExpired('accessToken');
     }
