@@ -9,6 +9,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
+import { AuthModule } from './core/auth/auth.module';
 import { SettingsModule } from './settings/settings.module';
 import { WelcomeModule } from './welcome/welcome.module';
 import { CoreModule } from './core/core.module';
@@ -20,7 +21,6 @@ import { NotAuthorizedComponent } from './not-authorized/not-authorized.componen
 import { NotFoundPageComponent} from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AdminModule } from './admin/admin.module';
-import { AuthGuard } from './core/guards/auth.guard';
 import { fakeBackendProvider } from './core/helpers/fake-backend';
 import { AppMaterialModule } from './core/material/material.module';
 import { ErrorInterceptor } from './core/errorhandler/error-interceptor';
@@ -45,18 +45,9 @@ import { ErrorInterceptor } from './core/errorhandler/error-interceptor';
     AdminModule,
     AppMaterialModule,
     EffectsModule.forRoot([]),
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: () => {
-          return localStorage.getItem('accessToken');
-        },
-        whitelistedDomains: ['localhost:80']
-      }
-    })
-
+    AuthModule
   ],
   providers: [
-      AuthGuard,
       fakeBackendProvider,
       MockBackend,
       BaseRequestOptions,

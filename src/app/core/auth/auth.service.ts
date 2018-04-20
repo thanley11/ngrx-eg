@@ -4,14 +4,14 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { environment } from '../../../environments/environment';
 import { Token } from './token.model';
-import { tokenNotExpired } from 'angular2-jwt';
+import { JwtHelperService   } from '@auth0/angular-jwt';
 
 @Injectable()
 export class AuthenticationService {
     public token: string;
     private _url: string = `${environment.apiUrl}/api-token-auth/`
 
-    constructor(private _http: HttpClient) {
+    constructor(private _http: HttpClient, private _helper: JwtHelperService) {
         // const currentUser = JSON.parse(localStorage.getItem('accessToken'));
         // this.token = currentUser && currentUser.token;
     }
@@ -39,7 +39,12 @@ export class AuthenticationService {
     }
 
 
+    // loggedIn() {
+    //   return this._helper.isTokenExpired('accessToken');
+    // }
+
     loggedIn() {
-      return tokenNotExpired('accessToken');
+        const token: string = localStorage.getItem('accessToken');
+        return token != null && !this._helper.isTokenExpired(token);
     }
 }

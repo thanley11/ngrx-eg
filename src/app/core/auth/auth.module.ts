@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Http, RequestOptions } from '@angular/http';
-import { AuthHttp, AuthConfig } from 'angular2-jwt';
-
-export function authHttpServiceFactory(http: Http, options: RequestOptions) {
-  return new AuthHttp(new AuthConfig(), http, options);
-}
+import { JwtModule   } from '@auth0/angular-jwt';
+import { AuthGuard } from '../guards/auth.guard';
 
 @NgModule({
-  providers: [
-    {
-      provide: AuthHttp,
-      useFactory: authHttpServiceFactory,
-      deps: [Http, RequestOptions]
+  imports: [
+  JwtModule.forRoot({
+    config: {
+      tokenGetter: () => {
+        return localStorage.getItem('accessToken');
+      },
+      whitelistedDomains: ['localhost:80']
     }
-  ]
+  })
+],
+providers: [
+  AuthGuard
+]
 })
 export class AuthModule {}
