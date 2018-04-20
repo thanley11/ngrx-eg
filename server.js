@@ -32,6 +32,16 @@ function isAuthenticated({username, password}){
   return userdb.users.findIndex(user => user.username === username && user.password === password) !== -1
 }
 
+function hasAccess(token){
+  var decoded = jwt.decode(token, {complete: true});
+  return userdb.users.findIndex(user => user.scope === decoded.payload["scope"]) !== -1
+}
+
+function getScope(username){
+  const user = userdb.users.find(user => user.username === username);
+  return user["scope"];
+}
+
 server.post('/api-token-auth/', (req, res, next) => {
   const {username, password} = req.body
   if (isAuthenticated({username, password}) === false) {
@@ -40,7 +50,9 @@ server.post('/api-token-auth/', (req, res, next) => {
     res.status(status).json({status, message})
     return
   }
-  const access_token = createToken({username, password})
+  //urn:examplecompany:product_price:update
+  const scope = getScope(username);
+  const access_token = createToken({username, password, scope: scope})
   res.status(200).json({access_token})
 })
 
@@ -51,8 +63,16 @@ server.use(/^(?!\/auth).*$/,  (req, res, next) => {
     res.status(status).json({status, message})
     return
   }
+
   try {
-     verifyToken(req.headers.authorization.split(' ')[1])
+  const token = req.headers.authorization.split(' ')[1];
+     if (hasAccess(token) === false) {
+       const status = 401
+       const message = 'User no have permission';
+       res.status(status).json({status, message})
+       return
+     }
+     verifyToken(token);
      next()
   } catch (err) {
     const status = 401
@@ -66,3 +86,6 @@ server.use(router)
 server.listen(3000, () => {
   console.log('Run Auth API Server')
 })
+
+// Scope passed in as list to get token
+//https://slack.com/oauth/authorize?client_id=...&scope=team%3Aread+users%3Aread
